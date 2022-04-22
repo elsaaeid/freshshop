@@ -737,6 +737,38 @@
  .top-search input.form-control{
      color: #ffffff;
 }
+div#product-list {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 22%;
+ }
+div#product-list a {
+    width: 100%;
+}
+.product {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: #b0b43573;
+    justify-content: space-between;
+}
+.product:hover {
+background-color: #b0b435;
+}
+.p-details {
+    display: flex;
+}
+.p-details h2 {
+    color: white;
+    font-size: 18px;
+    margin-left: 13px;
+}
+.container::-wekit-scrollbar {
+ display:none;
+}
 /*------------------------------------------------------------------ Slider -------------------------------------------------------------------*/
  .cover-slides{
      height: 100vh;
@@ -2597,24 +2629,3 @@
 	padding: 12px 25px;
 	border: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
