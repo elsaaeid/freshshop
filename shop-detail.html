@@ -184,18 +184,47 @@
     </header>
     <!-- End Main Top -->
 
+
     <!-- Start Top Search -->
     <div class="top-search">
         <div class="container">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
+                <input onkeyup="search()" type="text" class="form-control" placeholder="Search" id="search-item">
                 <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
             </div>
-        </div>
+       <div class="product-list" id="product-list" style="display:none;">
+       <a href="shop-detail.html">
+        <div class="product">
+		<img src="images/img-pro-01.jpg" alt="img" style="width:50px;height:50px">
+		<div class="p-details">		
+		  <h2>Fruits</h2>
+		  <h2>5$</h2>
+		</div>
+	</div>
+       </a>
+       <a href="shop-detail.html">
+        <div class="product">
+		<img src="images/img-pro-02.jpg" alt="img" style="width:50px;height:50px">
+		<div class="p-details">
+		  <h2>Bulbs</h2>
+		  <h2>5$</h2>
+		</div>
+	</div>
+       </a>
+       <a href="shop-detail.html">
+        <div class="product">
+		<img src="images/img-pro-03.jpg" alt="img" style="width:50px;height:50px"> 
+		<div class="p-details">
+		  <h2>Bulbs</h2>
+		  <h2>5$</h2>
+		</div>
+	</div>
+       </a>
+       </div>
+       </div>
     </div>
     <!-- End Top Search -->
-
     <!-- Start All Title Box -->
     <div class="all-title-box">
         <div class="container">
@@ -691,6 +720,27 @@
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+   <script>
+   const search = () =>{
+    const searchbox = document.getElementById("search-item").value.toUpperCase();
+    const storeitems = document.getElementById("product-list");
+    const product = document.querySelectorAll(".product");
+    const pname = document.getElementsByTagName("h2");
+
+    for(var i=0; i < pname.length; i++){
+       let match = product[i].getElementsByTagName('h2')[0];
+       if(match){
+ 	   let textvalue = match.textContent || match.innerHTML
+           if(textvalue.toUpperCase().indexOf(searchbox) > -1){
+	    storeitems.style.display = "block";
+            product[i].style.display = "";
+	}else{
+           product[i].style.display = "none";
+	}
+	}
+    }
+  }
+  </script>
 </body>
 
 </html>
